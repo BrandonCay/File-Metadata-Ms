@@ -1,0 +1,46 @@
+
+:root{
+    --len:-85.5vh;/*96 for 6060*//*2 per 20px// lower vh=moving end position backwards relative to direction*/ 
+    --timing:5.5s;
+}
+
+@keyframes up{
+    from{
+        top:0vh;
+    }
+    to{
+        top:var(--len);
+    }
+}
+@keyframes down{
+    from{
+        top:var(--len);
+    }
+    to{
+        top:0vh;
+    }
+}
+body{
+    background-color:#007BFF;
+}
+/*007BFF*/
+.backG{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:200vh;
+    z-index:-1;
+    background-color:none;
+    background-image: radial-gradient(white 15%, transparent 16%),
+    radial-gradient(white 15%, transparent 16%);
+    background-size: 200px 200px;
+    background-position: 0px 0px, 0px 0px;
+    animation: up infinite var(--timing);
+    animation-timing-function: linear;
+}
+#backG2{
+    animation:down infinite var(--timing);
+    animation-timing-function: linear;
+    left:-5vw;
+}
